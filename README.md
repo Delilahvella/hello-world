@@ -167,3 +167,8 @@ eval_gemfile(plugins_path) if File.exist?(plugins_path)
  xcuserdata/
  xcshareddata/
 +fastlane/report.xml
+xcuserdata/
+xcshareddata/
+fastlane/report.xml
+#visually centre web icon 
+

@@ -171,4 +171,13 @@ xcuserdata/
 xcshareddata/
 fastlane/report.xml
 #visually centre web icon 
-
+#increasing fontsize
+@@ -165,7 +165,7 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
+         view.rightView = UIView(frame: frame)
+         view.rightViewMode = .always
+ 
+-        view.font = UIFont(name: "Helvetica", size: 13)
++        view.font = UIFont(name: "HelveticaNeue-Medium", size: 15)
+         view.textColor = Colors.text
+ 
+         let attributes: [NSAttributedStringKey : Any] = [

@@ -181,3 +181,129 @@ fastlane/report.xml
          view.textColor = Colors.text
  
          let attributes: [NSAttributedStringKey : Any] = [
+@@ -0,0 +1,24 @@
++//
++//  RightAmr.swift
++//  LoginCritter
++//
++//  Created by Christopher Goldsby on 4/22/18.
++//  Copyright © 2018 Christopher Goldsby. All rights reserved.
++//
++
++import UIKit
++
++final class RightArm: UIImageView {
++
++    convenience init() {
++        self.init(image: UIImage.Critter.rightArm)
++    }
++
++    override func didMoveToSuperview() {
++        super.didMoveToSuperview()
++        guard let superview = superview else { return }
++
++        let originY = superview.bounds.maxY
++        frame = CGRect(x: 92.6, y: originY, width: 42.3, height: 82.6)
++    }
++}
+
+@@ -0,0 +1,24 @@
++//
++//  LeftArm.swift
++//  LoginCritter
++//
++//  Created by Christopher Goldsby on 4/22/18.
++//  Copyright © 2018 Christopher Goldsby. All rights reserved.
++//
++
++import UIKit
++
++final class LeftArm: UIImageView {
++
++    convenience init() {
++        self.init(image: UIImage.Critter.leftArm)
++    }
++
++    override func didMoveToSuperview() {
++        super.didMoveToSuperview()
++        guard let superview = superview else { return }
++
++        let originY = superview.bounds.maxY
++        frame = CGRect(x: 25.1, y: originY, width: 42.3, height: 82.6)
++    }
++}
+	EB26A6942083BB1A00E5D440 /* Nose.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB26A6932083BB1A00E5D440 /* Nose.swift */; };
+ 		EB26A6962083BCB400E5D440 /* Mouth.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB26A6952083BCB400E5D440 /* Mouth.swift */; };
+ 		EB7A27352073A4EE00C38FFF /* CATransform3D+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7A27342073A4EE00C38FFF /* CATransform3D+Helper.swift */; };
++		EBADCC45208CA82700CE95C3 /* LeftArm.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBADCC44208CA82700CE95C3 /* LeftArm.swift */; };
++		EBADCC47208CA83000CE95C3 /* RightArm.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBADCC46208CA83000CE95C3 /* RightArm.swift */; };
+ 		EBBA760C206E6F020018CD99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBA760B206E6F020018CD99 /* AppDelegate.swift */; };
+ 		EBBA760E206E6F020018CD99 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBA760D206E6F020018CD99 /* LoginViewController.swift */; };
+ 		EBBA7613206E6F020018CD99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBBA7612206E6F020018CD99 /* Assets.xcassets */; };
+@@ -45,6 +47,8 @@
+ 		EB26A6932083BB1A00E5D440 /* Nose.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nose.swift; sourceTree = "<group>"; };
+ 		EB26A6952083BCB400E5D440 /* Mouth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mouth.swift; sourceTree = "<group>"; };
+ 		EB7A27342073A4EE00C38FFF /* CATransform3D+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CATransform3D+Helper.swift"; sourceTree = "<group>"; };
++		EBADCC44208CA82700CE95C3 /* LeftArm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftArm.swift; sourceTree = "<group>"; };
++		EBADCC46208CA83000CE95C3 /* RightArm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightArm.swift; sourceTree = "<group>"; };
+ 		EBBA7608206E6F020018CD99 /* Login Critter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Login Critter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+ 		EBBA760B206E6F020018CD99 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+ 		EBBA760D206E6F020018CD99 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+@@ -72,12 +76,14 @@
+ 			children = (
+ 				EB26A67D2083801100E5D440 /* Body.swift */,
+ 				EB26A6832083A53100E5D440 /* Head.swift */,
++				EBADCC44208CA82700CE95C3 /* LeftArm.swift */,
+ 				EB26A6852083ABE700E5D440 /* LeftEar.swift */,
+ 				EB26A6892083B12B00E5D440 /* LeftEarMask.swift */,
+ 				EB26A68D2083B5B200E5D440 /* LeftEye.swift */,
+ 				EB26A6952083BCB400E5D440 /* Mouth.swift */,
+ 				EB26A6912083B9EF00E5D440 /* Muzzle.swift */,
+ 				EB26A6932083BB1A00E5D440 /* Nose.swift */,
++				EBADCC46208CA83000CE95C3 /* RightArm.swift */,
+ 				EB26A6872083AF5200E5D440 /* RightEar.swift */,
+ 				EB26A68B2083B42100E5D440 /* RightEarMask.swift */,
+ 				EB26A68F2083B82700E5D440 /* RightEye.swift */,
+@@ -238,12 +244,14 @@
+ 				EB26A6902083B82700E5D440 /* RightEye.swift in Sources */,
+ 				EB26A67E2083801100E5D440 /* Body.swift in Sources */,
+ 				EB26A6922083B9EF00E5D440 /* Muzzle.swift in Sources */,
++				EBADCC45208CA82700CE95C3 /* LeftArm.swift in Sources */,
+ 				EB26A68E2083B5B200E5D440 /* LeftEye.swift in Sources */,
+ 				EB26A6962083BCB400E5D440 /* Mouth.swift in Sources */,
+ 				EBBA760E206E6F020018CD99 /* LoginViewController.swift in Sources */,
+ 				EB26A68A2083B12B00E5D440 /* LeftEarMask.swift in Sources */,
+ 				EBBA760C206E6F020018CD99 /* AppDelegate.swift in Sources */,
+ 				EB26A6882083AF5200E5D440 /* RightEar.swift in Sources */,
++				EBADCC47208CA83000CE95C3 /* RightArm.swift in Sources */,
+ 				EB26A6942083BB1A00E5D440 /* Nose.swift in Sources */,
+ 				EBDC9183206E7F8C00F95959 /* CritterAssets.swift in Sources */,
+ 				EB26A6842083A53100E5D440 /* Head.swift in Sources */,
+  
+5  LoginCritter/Sources/Login/Critter/CritterView.swift
+@@ -26,12 +26,14 @@ final class CritterView: UIView {
+ 
+     private let body = Body()
+     private let head = Head()
++    private let leftArm = LeftArm()
+     private let leftEar = LeftEar()
+     private let leftEarMask = LeftEarMask()
+     private let leftEye = LeftEye()
+     private let mouth = Mouth()
+     private let muzzle = Muzzle()
+     private let nose = Nose()
++    private let rightArm = RightArm()
+     private let rightEar = RightEar()
+     private let rightEarMask = RightEarMask()
+     private let rightEye = RightEye()
+@@ -74,6 +76,9 @@ final class CritterView: UIView {
+ 
+         muzzle.addSubview(nose)
+         muzzle.addSubview(mouth)
++
++        addSubview(leftArm)
++        addSubview(rightArm)
+     }
+ 
+     private func setUpMask() {
+     
